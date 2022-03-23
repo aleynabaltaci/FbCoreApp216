@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FbCoreApp216.Api", "FbCoreApp216.Api\FbCoreApp216.Api.csproj", "{CF87CD5F-0191-4C05-9A33-5E3E1A64EB0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FbCoreApp216.Api", "FbCoreApp216.Api\FbCoreApp216.Api.csproj", "{CF87CD5F-0191-4C05-9A33-5E3E1A64EB0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FbCoreApp216.Mvc", "FbCoreApp216.Mvc\FbCoreApp216.Mvc.csproj", "{EB87EB51-CEC8-4318-AE92-70F8E047E282}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FbCoreApp216.Mvc", "FbCoreApp216.Mvc\FbCoreApp216.Mvc.csproj", "{EB87EB51-CEC8-4318-AE92-70F8E047E282}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FbCoreApp216.Core", "FbCoreApp216.Core\FbCoreApp216.Core.csproj", "{D39EEED3-4B9D-42AE-AF99-549247D30B03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FbCoreApp216.Core", "FbCoreApp216.Core\FbCoreApp216.Core.csproj", "{D39EEED3-4B9D-42AE-AF99-549247D30B03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FbCoreApp216.Data", "FbCoreApp216.Data\FbCoreApp216.Data.csproj", "{2C77C005-D0B3-405C-B70F-2E4A5C019627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FbCoreApp216.Data", "FbCoreApp216.Data\FbCoreApp216.Data.csproj", "{2C77C005-D0B3-405C-B70F-2E4A5C019627}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FbCoreApp216.Service", "FbCoreApp216.Service\FbCoreApp216.Service.csproj", "{9E109FF6-AD42-4655-B2F6-4276FD466D53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FbCoreApp216.Service", "FbCoreApp216.Service\FbCoreApp216.Service.csproj", "{9E109FF6-AD42-4655-B2F6-4276FD466D53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15017D80-788C-454C-B899-BD8F39F19674}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

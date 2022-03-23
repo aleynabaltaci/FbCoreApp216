@@ -17,10 +17,12 @@ namespace FbCoreApp216.Data.Configuration
         {
             builder.HasKey(s => s.ID);
             builder.Property(s => s.ID).UseIdentityColumn();
-            builder.Property(s=>s.Name).IsRequired().HasMaxLength(200);
+            builder.Property(s=>s.ProductName).IsRequired().HasMaxLength(200);
             builder.Property(s=>s.Stock).IsRequired();
             builder.Property(s=>s.Price).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(s => s.InnerBarcode).HasMaxLength(50);
+            builder.Property(s => s.CreatedDate).HasColumnType("date");
+            builder.Property(s => s.UpdatedTime).HasColumnType("date");
             builder.ToTable("tblProducts");
         }
     }

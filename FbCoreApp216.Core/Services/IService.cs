@@ -14,8 +14,8 @@ namespace FbCoreApp216.Core.Service
         Task<IEnumerable<T>> Where(Expression<Func<T,bool>> predicate);//(s=>s.==5)
         Task<T> SingleOrDefaultAsync(Expression<Func<T,bool>> predicate);
 
-        Task AddAsync(T entity);
-        Task AddRangeAsync(IEnumerable<T> entities);//Tek seferde bir çok veri göndermeyi sağlar.
+        Task<T> AddAsync(T entity);
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);//Tek seferde bir çok veri göndermeyi sağlar.
 
         T Update(T entity);
         void Remove(T entity);

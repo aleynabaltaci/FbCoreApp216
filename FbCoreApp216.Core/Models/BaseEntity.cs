@@ -10,8 +10,8 @@ namespace FbCoreApp216.Core.Models
     {
         public int ID { get; set; }
         public int CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         public int UpdatedBy { get; set; }
-        public DateTime UpdatedTime { get; set; }
+        public DateTime? UpdatedTime { get; set; }
     }
 }

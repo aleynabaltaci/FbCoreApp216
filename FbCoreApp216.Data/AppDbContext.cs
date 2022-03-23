@@ -1,5 +1,6 @@
 ﻿using FbCoreApp216.Core.Models;
 using FbCoreApp216.Data.Configuration;
+using FbCoreApp216.Data.Seed;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
@@ -22,6 +23,8 @@ namespace FbCoreApp216.Data
         {
             modelBuilder.ApplyConfiguration(new ProductConfiguraiton());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductSeed(new int[] {1,2}));
+            modelBuilder.ApplyConfiguration(new CategorySeed(new int[] {1,2}));
         }
     }
 }
