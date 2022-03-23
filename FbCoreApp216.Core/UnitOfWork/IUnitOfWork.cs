@@ -9,7 +9,7 @@ namespace FbCoreApp216.Core.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        IProductRepository product { get; }
+        IProductService product { get; }
         ICategoryRepository category { get; }
 
         Task CommitAsync();

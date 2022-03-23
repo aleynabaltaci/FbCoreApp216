@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FbCoreApp216.Data.Repository
 {
-    public class ProductRepository : Repository<Product>, IProductRepository
+    public class ProductRepository : Repository<Product>, IProductService
     {
         private AppDbContext appDbContext { get=> _db as AppDbContext; }
         public ProductRepository(AppDbContext db) : base(db)

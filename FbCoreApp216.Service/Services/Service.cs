@@ -12,7 +12,7 @@ namespace FbCoreApp216.Service.Services
 {
     public class Service<T> : IService<T> where T : class
     {
-        private readonly IUnitOfWork _unitOfWork;
+        protected readonly IUnitOfWork _unitOfWork;
         private readonly IRepository<T> _repo;
     
 

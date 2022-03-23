@@ -10,6 +10,6 @@ namespace FbCoreApp216.Core.Services
 {
     public interface IProductService : IService<Product>
     {
-        Task<Product> GetWithByIdAsync(Guid productId);
+        Task<Product> GetWithByIdAsync(int productId);
     }
 }

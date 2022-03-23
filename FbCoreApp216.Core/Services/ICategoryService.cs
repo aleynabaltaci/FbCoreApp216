@@ -10,6 +10,6 @@ namespace FbCoreApp216.Core.Services
 {
     public interface ICategoryService:IService<Category>
     {
-        Task<Category> GetWithByIdAsync(Guid categoryId);
+        Task<Category> GetWithByIdAsync(int categoryId);
     }
 }

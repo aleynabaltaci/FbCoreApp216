@@ -20,7 +20,7 @@ namespace FbCoreApp216.Data.UnitOfWork
         }
 
         //Bu alanı açıklamak için incele.
-        public IProductRepository product => _productRepository??= new ProductRepository(_db);
+        public IProductService product => _productRepository??= new ProductRepository(_db);
 
         public ICategoryRepository category => _categoryRepository??= new CategoryRepository(_db);
         public void Commit()
