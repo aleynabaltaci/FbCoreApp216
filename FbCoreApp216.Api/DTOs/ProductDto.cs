@@ -4,9 +4,9 @@ namespace FbCoreApp216.Api.DTOs
 {
     public class ProductDto
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         [Required(ErrorMessage ="{0} alanı zorunludur.")]
-        public string Name { get; set; }
+        public string ProductName { get; set; }
         [Range(1,int.MaxValue,ErrorMessage ="{0} alanı sıfırdan büyük bir değer olmalıdır.")]
         public int Stock { get; set; }
         [Range(1, double.MaxValue, ErrorMessage = "{0} alanı sıfırdan büyük bir değer olmalıdır.")]

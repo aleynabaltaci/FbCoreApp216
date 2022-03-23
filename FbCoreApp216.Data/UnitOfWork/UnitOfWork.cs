@@ -1,4 +1,5 @@
 ﻿using FbCoreApp216.Core.Repository;
+using FbCoreApp216.Core.Services;
 using FbCoreApp216.Core.UnitOfWork;
 using FbCoreApp216.Data.Repository;
 using System;
@@ -20,7 +21,7 @@ namespace FbCoreApp216.Data.UnitOfWork
         }
 
         //Bu alanı açıklamak için incele.
-        public IProductService product => _productRepository??= new ProductRepository(_db);
+        public IProductRepository product => _productRepository??= new ProductRepository(_db);
 
         public ICategoryRepository category => _categoryRepository??= new CategoryRepository(_db);
         public void Commit()

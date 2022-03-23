@@ -1,5 +1,6 @@
 ﻿using FbCoreApp216.Core.Models;
 using FbCoreApp216.Core.Repository;
+using FbCoreApp216.Core.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FbCoreApp216.Data.Repository
 {
-    public class ProductRepository : Repository<Product>, IProductService
+    public class ProductRepository : Repository<Product>, IProductRepository
     {
         private AppDbContext appDbContext { get=> _db as AppDbContext; }
         public ProductRepository(AppDbContext db) : base(db)

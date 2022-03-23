@@ -4,9 +4,9 @@ namespace FbCoreApp216.Api.DTOs
 {
     public class CategoryDto
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         [Required(ErrorMessage="{0} alanı gereklidir.")]
-        public string Name { get; set; }
+        public string CategoryName { get; set; }
     }
 }

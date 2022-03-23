@@ -1,4 +1,5 @@
 ﻿using FbCoreApp216.Core.Repository;
+using FbCoreApp216.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace FbCoreApp216.Core.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        IProductService product { get; }
+        IProductRepository product { get; }
         ICategoryRepository category { get; }
 
         Task CommitAsync();
