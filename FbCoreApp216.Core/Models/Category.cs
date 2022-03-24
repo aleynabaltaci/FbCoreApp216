@@ -18,5 +18,17 @@ namespace FbCoreApp216.Core.Models
 
 
         public virtual ICollection<Product> Products { get; set; } = new Collection<Product>();
+        /*neden virtual kullandık?
+          
+        * Eager Loading :Bütün tabloyu yüklemeyi sağlar (Bağlı tablolar dahil)
+        * Oluşturulan nesnenin bağlı tabloların bilgilerini de içerir.
+        * 
+        * 
+        * 
+        * Lazy Loading :Bağlı tabloların içeriğini vermez.
+        * Olusturan nesnenin baglı olduğu bilgileri getirmez sadece navigation columnu getirir.
+        * virtual demezsek product tablosunda kategori içindeki tüm sütunları ekler.Virtual dersek sadece kategoriID ekler.
+        * 
+        */
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FbCoreApp216.Api.DTOs;
+using FbCoreApp216.Core.Models;
 using FbCoreApp216.Core.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,15 +23,48 @@ namespace FbCoreApp216.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var cat=await _catService.GetAllAsync();
+            var cat = await _catService.Where(x=>x.IsDeleted!=true);
             return Ok(_mapper.Map<IEnumerable<CategoryDto>>(cat));
         }
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var cat=await _catService.GetByIdAsync(id);
+            var cat = await _catService.GetByIdAsync(id);
             return Ok(_mapper.Map<CategoryDto>(cat));
         }
+        [HttpPost]
+        public async Task<IActionResult> Save(CategoryDto catdto)
+        {
+            var newCat = await _catService.AddAsync(_mapper.Map<Category>(catdto));
+            return Created(string.Empty, _mapper.Map<CategoryDto>(newCat));
+        }
+        [HttpPut]
+        public IActionResult Update(CategoryDto catDto)
+        {
+            var cat = _catService.Update(_mapper.Map<Category>(catDto));
+            //
+            //return NoContent();
+            //sonuc göstermek istersek
+            return Ok(_mapper.Map<CategoryDto>(cat));
+        }
+        //[HttpDelete("{id:int}")]
+        //public IActionResult Remove(int id)
+        //{
+        //    var cat=_catService.GetByIdAsync(id).Result;//result dersek asenkron metod asenkron olmayan yerde çalışır hata vermez.
+        //    _catService.Remove(cat);
+        //    return NoContent();
+        //}
+
+        [HttpDelete("{id:int}")]
+        public IActionResult Remove(int id) // direk silmek yerine IsDeleted'ı true döndürmemiz lazım
+        {
+            var cat=_catService.GetByIdAsync(id).Result;//result dersek asenkron metod asenkron olmayan yerde çalışır hata vermez.
+            cat.IsDeleted = true;
+            _catService.Update(cat);
+            return NoContent();
+        }
+
+
 
     }
 }

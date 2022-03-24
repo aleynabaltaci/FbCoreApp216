@@ -1,7 +1,9 @@
-********************************1.Gün*************************
+******************************** 1.Gün ********************************
 -Blank Solution oluþturduk
 -Katmanlý mimari için ilgili projeleri solutiona ekleme(Api(Asp .Net Core Api) - Core(Class Library) - Data(Class Library) - Mvc(Asp .Net Core Mvc)-Service(Class Library)
--Core katmanýndan baþlayarak 
+
+
+-Core katmaný-
 	-Model Klasörü olusturduk.Icýnde BaseEntity Category ve Product classlarýný yazdýk.
 	-Category ve product classlarýna BaseEntity classýný miras verdik.
 	-Bu classlar ayný zamanda Db de tablolara dönüþeceði için propertylerle doldurduk.
@@ -19,7 +21,7 @@
 
 
 
--Data Katmaný
+-Data Katmaný-
 	**Kullanýlan Kütüphaneler
 	**Microsoft.EntityFrameworkCore
 	**Microsoft.EntityFrameworkCore.Design
@@ -35,3 +37,30 @@
 	-Dbde tablolarýmýz oluþtuktan sonra Seed metodunu kullanarak oluþan tablolara test datalarý yükledik.
 
 	-Context ile Db arasýndaki baðlantýyý Api katmaný üzerindeki appsetting.json dosyasýný kullanrak connectionstring ifadesini ekledik.
+
+
+******************************** 2.Gün ********************************
+-Api Katmaný-
+	**AutoMapper.Extensions.Microsoft.DependencyInjection
+
+	-Dto dosyasýnda CategoryDto,ProductDto sýnýflarý eklenerek propertyler ve requiredlar yazýldý. CategoryWithProduct ve ProductWithCategory arasýnda navigasyon yazýldý.
+
+	-Mapping Klasöründeki MapProfile sýnýfý ile Dtolarýn Mapping iþlemi yapýldý.
+
+	-CategoryController eklenerek HttpGet(GetAll,GetById) metodlarý yazýldý.
+	-Constructorda category service ve mapperlara atama yapýldý.
+
+-Data Katmaný-
+
+	-UnitOfWork classý eklenerek SaveChanges ve SaveChangesAsync eklendi.
+	
+-Service Katmaný-
+
+	-CategoryService classýnda Service<Category> ve ICategoryService'den miras aldýk.
+
+
+
+
+
+
+
