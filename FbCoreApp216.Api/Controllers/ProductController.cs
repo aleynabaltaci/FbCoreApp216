@@ -28,19 +28,23 @@ namespace FbCoreApp216.Api.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var pro= await _proService.GetByIdAsync(id);
+            var pro = await _proService.GetByIdAsync(id);
             return Ok(_mapper.Map<ProductDto>(pro));
         }
         [HttpPost]
         public async Task<IActionResult> Save(ProductDto proDto)
         {
-            var pro =await _proService.AddAsync(_mapper.Map<Product>(proDto));
-            return Created(string.Empty,_mapper.Map<ProductDto>(pro));
+            var pro = await _proService.AddAsync(_mapper.Map<Product>(proDto));
+            return Created(string.Empty, _mapper.Map<ProductDto>(pro));
         }
         [HttpPut]
         public IActionResult Update(ProductDto proDto)
         {
-            var pro =_proService.Update(_mapper.Map<Product>(proDto));
+            Task<Product> proBul=_proService.GetByIdAsync(proDto.ID);
+            proBul.Result.ProductName = proDto.ProductName;
+            proBul.Result.Stock=proDto.Stock;
+            proBul.Result.Price=proDto.Price;
+            var pro = _proService.Update(proBul.Result);
             return NoContent();
         }
         [HttpDelete("{id:int}")]
@@ -50,6 +54,12 @@ namespace FbCoreApp216.Api.Controllers
             pro.IsDeleted = true;
             _proService.Update(pro);
             return NoContent();
+        }
+        [HttpGet("{id:int}/category")]
+        public async Task<IActionResult> GetWithCategoryByIdAsync(int id)//Category nesnesini getirirken aynı zamanda product bilgilerini de getirir.
+        {
+            var pro=await _proService.GetWithByIdAsync(id);
+            return Ok(_mapper.Map<ProductWithCategoryDto>(pro));
         }
     }
 }

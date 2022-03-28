@@ -41,7 +41,14 @@ namespace FbCoreApp216.Api.Controllers
         [HttpPut]
         public IActionResult Update(CategoryDto catDto)
         {
-            var cat = _catService.Update(_mapper.Map<Category>(catDto));
+            //catDTo içinden Id ve NAme Alanı geliyor
+            //catDto işe GetByIdAsync kullanrak dbdeki kayıtlı olan bilgiye ulaştım Bunu catBul nesnesşne yükledim.
+            //Güncellemek istediğim alan Name alanı olduğundan
+            //catBuldaki name alanının 
+            Task<Category> catBul=_catService.GetByIdAsync(catDto.ID);
+            catBul.Result.CategoryName = catDto.CategoryName;
+
+            var cat = _catService.Update(catBul.Result);
             //
             //return NoContent();
             //sonuc göstermek istersek
@@ -63,7 +70,12 @@ namespace FbCoreApp216.Api.Controllers
             _catService.Update(cat);
             return NoContent();
         }
-
+        [HttpGet("{id:int}/product")]
+        public async Task<IActionResult> GetWithProductById(int id)
+        {
+            var cat=await _catService.GetWithByIdAsync(id);
+            return Ok(_mapper.Map<CategoryWtihProductDto>(cat));
+        }
 
 
     }
