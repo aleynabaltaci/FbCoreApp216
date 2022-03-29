@@ -1,8 +1,8 @@
-﻿using FbCoreApp216.Api.DTOs;
+﻿using FbCoreApp216.Mvc.DTOs;
 
 namespace FbCoreApp216.Mvc.DTOs
 {
-    public class CategoryWtihProductDto :CategoryDto
+    public class CategoryWithProductDto :CategoryDto
     {
 
         public IEnumerable<ProductDto> Products { get; set; }

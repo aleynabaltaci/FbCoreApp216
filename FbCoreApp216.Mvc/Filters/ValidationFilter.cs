@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace FbCoreApp216.Api.Filters
+namespace FbCoreApp216.Mvc.Filters
 {
     public class ValidationFilter : ActionFilterAttribute
     {

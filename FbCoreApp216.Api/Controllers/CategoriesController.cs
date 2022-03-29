@@ -74,7 +74,7 @@ namespace FbCoreApp216.Api.Controllers
         public async Task<IActionResult> GetWithProductById(int id)
         {
             var cat=await _catService.GetWithByIdAsync(id);
-            return Ok(_mapper.Map<CategoryWtihProductDto>(cat));
+            return Ok(_mapper.Map<CategoryWithProductDto>(cat));
         }
 
 

@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FbCoreApp216.Core\FbCoreApp216.Core.csproj" />
+    <ProjectReference Include="..\FbCoreApp216.Data\FbCoreApp216.Data.csproj" />
+    <ProjectReference Include="..\FbCoreApp216.Service\FbCoreApp216.Service.csproj" />
   </ItemGroup>
 
 </Project>

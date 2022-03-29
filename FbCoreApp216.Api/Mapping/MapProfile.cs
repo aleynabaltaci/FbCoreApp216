@@ -14,8 +14,8 @@ namespace FbCoreApp216.Api.Mapping
             CreateMap<Product, ProductDto>();
             CreateMap<ProductDto, Product>();
 
-            CreateMap<Category, CategoryWtihProductDto>();
-            CreateMap<CategoryWtihProductDto, Category>();
+            CreateMap<Category, CategoryWithProductDto>();
+            CreateMap<CategoryWithProductDto, Category>();
 
 
             CreateMap<Product, ProductWithCategoryDto>();
